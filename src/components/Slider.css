@@ -28,7 +28,7 @@
     right: 15px;
     justify-items: center;
     opacity: 0;
-    transition: opacity 1s ease, transform 0.3s ease;
+    transition: opacity 1s linear, transform 0.3s linear;
 }
 
 

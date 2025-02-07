@@ -7,14 +7,13 @@ import { FaAnglesRight } from 'react-icons/fa6';
 function Slider() {
     const [index, setIndex] = useState(0);
 
-    const slideLeft = () => setIndex(() => (index - 1 < 0 ? data.length - 1 : index - 1));
-
-    const slideRight = () => setIndex(() => (index + 1 < data.length ? index + 1 : 0));
-
     useEffect(() => {
-       const t1 = setTimeout(() => slideRight(),5000);
-       return ()=> clearTimeout(t1)
-    });
+        if (index > data.length - 1) setIndex(0);
+        else if (index < 0) setIndex(data.length - 1)
+
+        const t1 = setTimeout(() => setIndex(index + 1), 5000);
+        return () => clearTimeout(t1);
+    },[index]);
 
     return (
         <section className='slider'>
@@ -38,8 +37,8 @@ function Slider() {
                 );
             })}
             <div className='buttons'>
-                <button onClick={() => slideLeft()}>{FaAnglesLeft()}</button>
-                <button onClick={() => slideRight()}>{FaAnglesRight()}</button>
+                <button onClick={() => setIndex(index - 1)}>{FaAnglesLeft()}</button>
+                <button onClick={() => setIndex(index + 1)}>{FaAnglesRight()}</button>
             </div>
         </section>
     );
