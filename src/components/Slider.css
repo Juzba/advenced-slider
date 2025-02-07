@@ -2,11 +2,12 @@
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
-    box-shadow: 0 0 20px red;
+    box-shadow: 0 0 20px #e50914;
     border-radius: 2px;
-    width: 500px;
-    height: 420px;
+    width: 400px;
+    height: 450px;
     overflow: hidden;
+    padding: 10px;
 
     position: relative;
     transition: all 2s ease;
@@ -23,12 +24,13 @@
 
 .slider .card {
     position: absolute;
+    text-align: center;
     top: 15px;
-    left: 15px;
-    right: 15px;
+    left: 25px;
+    right: 25px;
     justify-items: center;
     opacity: 0;
-    transition: opacity 1s linear, transform 0.3s linear;
+    transition: opacity 0.5s linear, transform 0.2s linear;
 }
 
 
@@ -49,8 +51,9 @@
 
 .slider .buttons {
     width: 100%;
-    position: absolute;
-    bottom: 0;
+    /* position: absolute;
+    bottom: 0; */
+    align-items: end;
 
     display: flex;
     justify-content: center;
@@ -58,20 +61,26 @@
 }
 
 .slider .buttons button {
-    border-radius: 5px;
+    border-radius: 50%;
     font-size: 25px;
-    width: 80px;
-    height: 30px;
-    background-color: red;
+    width: 40px;
+    height: 40px;
+    background-color: #96040b;
+    color: aliceblue;
     border: none;
     margin: 5px;
     cursor: pointer;
     transition: all 1s ease;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
 }
 
 .slider .buttons button:hover {
-box-shadow: 0 0 25px rgb(255, 0, 0);
+box-shadow: 0 0 25px #e50914;
 background-color: white;
-color: red;
-
+color: #e50914;
+/* padding-left: 15px; */
 }

@@ -8,12 +8,13 @@ function Slider() {
     const [index, setIndex] = useState(0);
 
     useEffect(() => {
+        console.log('useeffect 1');
         if (index > data.length - 1) setIndex(0);
-        else if (index < 0) setIndex(data.length - 1)
+        else if (index < 0) setIndex(data.length - 1);
 
-        const t1 = setTimeout(() => setIndex(index + 1), 5000);
-        return () => clearTimeout(t1);
-    },[index]);
+        const t1 = setInterval(() => setIndex(index + 1), 5000);
+        return () => clearInterval(t1);
+    }, [index]);
 
     return (
         <section className='slider'>
